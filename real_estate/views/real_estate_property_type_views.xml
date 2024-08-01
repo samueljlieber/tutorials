@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="real_estate.property_type_list" model="ir.ui.view">
+        <field name="name">Property Type List</field>
+        <field name="model">real.estate.property.type</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>
