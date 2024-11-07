@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="real_estate_offer_1" model="real.estate.offer">
+        <field name="amount">150000.00</field>
+        <field name="buyer_id" ref="real_estate.john_odoe" />
+        <field name="date">2024-01-05</field>
+        <field name="validity">4</field>
+        <field name="state">waiting</field>
+        <field name="property_id" ref="real_estate_property_1"/>
+    </record>
+
+    <record id="real_estate_offer_2" model="real.estate.offer">
+        <field name="amount">10000.00</field>
+        <field name="buyer_id" ref="real_estate.jane_odoe" />
+        <field name="date">2024-01-03</field>
+        <field name="validity">6</field>
+        <field name="state">refused</field>
+        <field name="property_id" ref="real_estate_property_1"/>
+    </record>
+
+    <record id="real_estate_offer_3" model="real.estate.offer">
+        <field name="amount">1000.00</field>
+        <field name="buyer_id" ref="real_estate.amy_winehouse" />
+        <field name="date">2024-01-07</field>
+        <field name="validity">4</field>
+        <field name="state">waiting</field>
+        <field name="property_id" ref="real_estate_property_2"/>
+    </record>
+
+    <record id="real_estate_offer_4" model="real.estate.offer">
+        <field name="amount">50000000.00</field>
+        <field name="buyer_id" ref="real_estate.jack_black" />
+        <field name="date">2024-02-01</field>
+        <field name="validity">1</field>
+        <field name="state">accepted</field>
+        <field name="property_id" ref="real_estate_property_3"/>
+    </record>
+
+</odoo>

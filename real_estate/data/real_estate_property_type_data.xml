@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="real_estate_property_type_1" model="real.estate.property.type">
+        <field name="name">House</field>
+    </record>
+
+    <record id="real_estate_property_type_2" model="real.estate.property.type">
+        <field name="name">Apartment</field>
+    </record>
+
+    <record id="real_estate_property_type_3" model="real.estate.property.type">
+        <field name="name">Office</field>
+    </record>
+
+    <record id="real_estate_property_type_4" model="real.estate.property.type">
+        <field name="name">Retail</field>
+    </record>
+
+    <record id="real_estate_property_type_5" model="real.estate.property.type">
+        <field name="name">Warehouse</field>
+    </record>
+
+</odoo>
