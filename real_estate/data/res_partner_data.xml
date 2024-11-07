@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="real_estate.spoongebub_circlepants" model="res.partner">
+        <field name="name">Spoongebub Circlepants</field>
+    </record>
+
+    <record id="real_estate.spicy_meatball" model="res.partner">
+        <field name="name">Spicy Meatball</field>
+    </record>
+
+    <record id="real_estate.philip_fry" model="res.partner">
+        <field name="name">Philip J. Fry</field>
+    </record>
+
+    <record id="real_estate.john_odoe" model="res.partner">
+        <field name="name">John Odoe</field>
+    </record>
+
+    <record id="real_estate.jane_odoe" model="res.partner">
+        <field name="name">Jane Odoe</field>
+    </record>
+
+    <record id="real_estate.amy_winehouse" model="res.partner">
+        <field name="name">Amy Winehouse</field>
+    </record>
+
+    <record id="real_estate.jack_black" model="res.partner">
+        <field name="name">Jack Black</field>
+    </record>
+
+</odoo>

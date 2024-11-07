@@ -1,0 +1,107 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="real_estate_properties_list_view" model="ir.ui.view">
+        <field name="name">Properties</field>
+        <field name="model">real.estate.property</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="type_id"/>
+                <field name="selling_price"/>
+                <field name="availability_date"/>
+                <field name="floor_area"/>
+                <field name="bedrooms"/>
+                <field name="garden"/>
+                <field name="garage"/>
+                <field name="tag_ids"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="real_estate_properties_form_view" model="ir.ui.view">
+        <field name="name">Property</field>
+        <field name="model">real.estate.property</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': True}"/>
+                </header>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div clsss="oe_title">
+                        <label for="name" string="Property Name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. A house..."/>
+                        </h1>
+                        <group>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True, 'no_quick_create': True, 'no_create_edit': True}" />
+                        </group>
+                    </div>
+                    <group>
+                        <group string="Listing Information">
+                            <field name="type_id"/>
+                            <field name="selling_price"/>
+                            <field name="availability_date"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Building Specifications">
+                            <field name="floor_area"/>
+                            <field name="bedrooms"/>
+                            <field name="garden"/>
+                            <field name="garage"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group>
+                                <field name="description" placeholder="Write a description about this property." />
+                            </group>
+                        </page>
+                        <page string="Other Info">
+                            <group>
+                                <field name="seller_id"/>
+                                <field name="salesperson_id"/>
+                            </group>
+                        </page>
+                        <page string="Offers">
+                            <field name="offer_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="real_estate_properties_search_view" model="ir.ui.view">
+        <field name="name">Properties</field>
+        <field name="model">real.estate.property</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Search Fields -->
+                <field name="name" />
+                <field name="description" />
+                <field name="selling_price" string="Maximum Price" operator="&lt;="/>
+                <field name="floor_area" string="Minimum Floor Area" operator="&gt;="/>
+                <field name="bedrooms" string="Minimum Bedrooms" operator="&gt;="/>
+
+                <!-- Filters -->
+                <filter name="filter_state" string="For Sale" domain="[('state', 'in', ['new', 'received'])]" />
+                <separator/>
+                <filter name="filter_availability" string="Availability Date" date="availability_date" />
+                <separator/>
+                <filter name="filter_garden" string="Garden" domain="[('garden', '=', True)]" />
+                <filter name="filter_garage" string="Garage" domain="[('garage', '=', True)]" />
+                <separator/>
+                <filter name="filter_inactive" string="Archived" domain="[('active', '=', False)]" />
+
+                <!-- Group Bys -->
+                <filter name="group_by_state" context="{'group_by': 'state'}" />
+                <filter name="group_by_type" context="{'group_by': 'type_id'}" />
+            </search>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="real_estate_tag_ranch_house" model="real.estate.tag">
+        <field name="name">Ranch House</field>
+        <field name="color">1</field>
+    </record>
+
+    <record id="real_estate_tag_renovated" model="real.estate.tag">
+        <field name="name">Renovated</field>
+        <field name="color">2</field>
+    </record>
+
+    <record id="real_estate_tag_mansion" model="real.estate.tag">
+        <field name="name">Mansion</field>
+        <field name="color">3</field>
+    </record>
+
+</odoo>
